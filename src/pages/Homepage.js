@@ -57,7 +57,7 @@ const Homepage = () => {
 			<Jumbotron mode="full" height="min-h-[100vh]" />
 			{/* section desa */}
 			<section className="flex flex-col-reverse lg:flex-row lg:justify-between items-center py-10 bg-[#0B130F]">
-				<div className="text-white px-12 min-w-[500px] max-w-[700px]">
+				<div className="text-white px-12 lg:min-w-[500px] max-w-[700px]">
 					<h1 className="text-3xl font-bold mb-4">Tentang Desa</h1>
 					<p>
 						Ngadireso adalah sebuah desa di wilayah Kecamatan Poncokusumo,
@@ -76,7 +76,7 @@ const Homepage = () => {
 			</section>
 			{/* section kades */}
 			<section className="flex flex-col-reverse lg:flex-row-reverse lg:justify-center items-center lg:py-20 py-10 bg-[#F5F5F5]">
-				<div className="px-12 min-w-[500px] max-w-[700px]">
+				<div className="px-12 lg:min-w-[500px] max-w-[700px] w-full">
 					<h1 className="text-3xl font-bold mb-4">"</h1>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
@@ -135,7 +135,7 @@ const Homepage = () => {
 					mode="children"
 					background="bg-homepage-image">
 					<div className="flex flex-col items-center justify-center">
-						<h1 className="text-[2rem] font-bold lg:text-[3rem] text-white max-w-[500px] mb-5">
+						<h1 className="text-[1.4rem] font-bold lg:text-[3rem] text-white max-w-[500px] mb-5">
 							Kunjungi Wisata Desa Ngadireso!
 						</h1>
 						<div className="mx-5 bg-lime-800 py-2 px-3 text-white max-w-max">

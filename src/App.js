@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
+import Homepage from './pages/Homepage';
+import LaporTamu from './pages/Lapor';
+import News from './pages/News';
+import NewsDetail from './pages/NewsDetail';
+import Sejarah from './pages/Sejarah';
+import Wisata from './pages/Wisata';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Router>
+			<Navbar />
+			<ScrollToTop />
+			<Routes>
+				<Route exact path="/" element={<Homepage />} />
+				<Route path="/hiburan-wisata" element={<Wisata />} />
+				<Route path="/sejarah" element={<Sejarah />} />
+				<Route path="/kabar" element={<News />} />
+				<Route path="/lapor-tamu" element={<LaporTamu />} />
+				<Route path="/kabar/:id" element={<NewsDetail />} />
+			</Routes>
+			<Footer />
+		</Router>
+	);
 }
 
 export default App;

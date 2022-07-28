@@ -77,7 +77,7 @@ const Homepage = () => {
 			<section className="flex flex-col-reverse lg:flex-row lg:justify-between items-center py-10 bg-[#0B130F]">
 				<div className="text-white px-12 lg:min-w-[500px] max-w-[700px]">
 					<h1 className="text-3xl font-bold mb-4">Tentang Desa</h1>
-					<p>
+					<p className='text-justify'>
 						Ngadireso adalah sebuah desa di wilayah Kecamatan Poncokusumo,
 						Kabupaten Malang, Provinsi Jawa Timur. Kecamatan Poncokusumo
 						termasuk ke dalam kawasan agropolitan, yakni daerah pertanian
@@ -96,7 +96,7 @@ const Homepage = () => {
 			<section className="flex flex-col-reverse lg:flex-row-reverse lg:justify-center items-center lg:py-20 py-10 bg-[#F5F5F5]">
 				<div className="px-12 lg:min-w-[500px] max-w-[700px] w-full">
 					<h1 className="text-3xl font-bold mb-4">"</h1>
-					<p>
+					<p className='text-justify'>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
 						velit nemo non, maiores, at laborum quia ea voluptatem earum cumque
 						distinctio! Saepe, quae quidem. Nulla accusantium quae beatae

@@ -8,7 +8,7 @@ const Sejarah = () => {
 				height="min-h-[60vh]"
 				paragraph="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. "
 				title="Sejarah"
-        background='bg-sejarah-image'
+				background="bg-sejarah-image"
 			/>
 
 			<section className="px-12 my-[150px] space-y-5">
@@ -16,7 +16,7 @@ const Sejarah = () => {
 					<h1 className="text-3xl font-bold mb-5 text-[#3B653E]">
 						Sejarah Desa Ngadireso
 					</h1>
-					<p>
+					<p className="text-justify">
 						Sejarah awal mula berdirinya desa Ngadireso yang berada pada
 						kecamatan Poncokusumo berawal dari seorang putri dari kerajaan di
 						Tuban bernama Sri Huning, dia adalah anak angkat dari Adipati Tuban
@@ -29,7 +29,7 @@ const Sejarah = () => {
 						kabar peperangan antara Kerajaan Bojonegoro dan Kerajaan Lamongan.
 					</p>
 					<br />
-					<p>
+					<p className="text-justify">
 						Peperangan ini bermula dari pernikahan anak dari adipati Ranggalawe
 						yang bernama Wiratmoyo dengan putri dari kerajaan Bojonegoro bernama
 						dewi Kumalaretno. Kerajaan Lamongan merasa di sepele kan karena
@@ -46,7 +46,7 @@ const Sejarah = () => {
 					<h1 className="text-3xl font-bold mb-5 text-[#3B653E]">
 						Sejarah Tirta Umbulan
 					</h1>
-					<p>
+					<p className="text-justify">
 						Ketika kembali ke daerah yang sebelumnya sudah dijajaki oleh Sri
 						Huning yang digunakan sebagai tempat persembunyiannya disana
 						terdapat sumber mata air atau umbulan yang digunakan oleh putri Sri
@@ -56,7 +56,7 @@ const Sejarah = () => {
 						keselamatannya.
 					</p>
 					<br />
-					<p>
+					<p className="text-justify">
 						Umbulan tersebut dinamai Tirta Umbulan yang berasal dari kata Tirta
 						yaitu air dan Umbulan yang berarti air yang menyembur keatas.
 						Dipercaya air yang berada pada Tirta Umbulan dapat menjadi air

@@ -46,30 +46,34 @@ const Navbar = () => {
 					<div className="mx-5 hidden lg:block text-white">
 						<Link to={'/penyuratan'}>Penyuratan</Link>
 					</div>
-					<div className="mx-5 bg-lime-800 py-2 px-3 text-white hidden lg:block">
-						<Link to={'/lapor-tamu'}>Lapor Tamu</Link>
-					</div>
+					<Link to={'/lapor-tamu'}>
+						<div className="mx-5 bg-lime-800 py-2 px-3 text-white hidden lg:block">
+							Lapor Tamu
+						</div>
+					</Link>
 				</Toolbar>
 			</AppBar>
 
 			<div
 				className={`${
 					show ? 'block' : 'hidden'
-				} bg-white w-[100vw] h-[100vh] flex flex-col justify-start items-start pt-20 space-y-3 border-2 fixed`}
+				} bg-white w-[100vw] h-[100vh] flex flex-col justify-between items-start py-20 space-y-3 fixed pr-10`}
 				onClick={handleShowMenu}>
-				<div className="mx-5 text-black text-2xl border-b-2 border-black">
-					<Link to={'/hiburan-wisata'}>Hiburan & Wisata</Link>
+				<div className="flex flex-col space-y-5 ">
+					<div className="mx-5 text-black text-2xl border-b-2 max-w-max border-black">
+						<Link to={'/hiburan-wisata'}>Hiburan & Wisata</Link>
+					</div>
+					<div className="mx-5 text-black text-2xl border-b-2 max-w-max border-black">
+						<Link to={'/sejarah'}>Sejarah</Link>
+					</div>
+					<div className="mx-5 text-black text-2xl border-b-2 max-w-max border-black">
+						<Link to={'/kabar'}>Kabar</Link>
+					</div>
+					<div className="mx-5 text-black text-2xl border-b-2 max-w-max border-black">
+						<Link to={'/penyuratan'}>Penyuratan</Link>
+					</div>
 				</div>
-				<div className="mx-5 text-black text-2xl border-b-2 border-black">
-					<Link to={'/sejarah'}>Sejarah</Link>
-				</div>
-				<div className="mx-5 text-black text-2xl border-b-2 border-black">
-					<Link to={'/kabar'}>Kabar</Link>
-				</div>
-				<div className="mx-5 text-black text-2xl border-b-2 border-black">
-					<Link to={'/penyuratan'}>Penyuratan</Link>
-				</div>
-				<div className="mx-5 bg-lime-800 py-2 px-3 text-white  text-2xl mt-12">
+				<div className="mx-5 border-b-2 border-black w-full py-2 px-3 text-black text-2xl mt-12">
 					<Link to={'/lapor-tamu'}>Lapor Tamu</Link>
 				</div>
 			</div>

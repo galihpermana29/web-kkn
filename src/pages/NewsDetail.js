@@ -50,7 +50,7 @@ const NewsDetail = () => {
 			</div>
 			<div className="w-full ">
 				<h1 className="text-3xl font-bold mb-4">Berita Lainnya</h1>
-				<div className="flex flex-wrap space-y-5 space-x-5 items-center justify-center lg:justify-start">
+				<div className="flex flex-wrap space-y-5 lg:space-x-5 items-center justify-center lg:justify-start">
 					<div></div>
 					{allNews.map((news) => (
 						<Cards

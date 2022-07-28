@@ -14,12 +14,12 @@ const LaporTamu = () => {
 			<section className="flex justify-center items-center px-10 my-12 min-h-[90vh]">
 				<iframe
 					src="https://docs.google.com/forms/d/e/1FAIpQLSc7xBfFutq1Stv1qpQfAnlBNxX_fdTZcnJwnhr2X_ZtU6KeEQ/viewform?embedded=true"
-					width="640"
+					width="100%"
 					height="1130"
-					frameborder="0"
-					marginheight="0"
+					frameBorder="0"
+					marginHeight="0"
 					title="lapor-form"
-					marginwidth="0">
+					marginWidth="0">
 					Loading…
 				</iframe>
 			</section>

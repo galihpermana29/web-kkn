@@ -36,7 +36,7 @@ const News = () => {
 				)}
 
 				{news.length > 0 && (
-					<div className="flex justify-start flex-wrap space-x-3 space-y-7 w-full">
+					<div className="flex lg:justify-start justify-center flex-wrap space-x-3 space-y-7 w-full">
 						<div></div>
 						{news.map((news) => (
 							<Cards

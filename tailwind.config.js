@@ -10,6 +10,7 @@ module.exports = {
 				'sejarah-image': "url('/public/assets/jumbotron-sejarah.png')",
 				'news-image': "url('/public/assets/jumbotron-news.png')",
 				'lapor-image': "url('/public/assets/jumbotron-lapor.png')",
+				'penyuratan-image': "url('/public/assets/jumbotron-penyuratan.png')",
 			},
 		},
 	},

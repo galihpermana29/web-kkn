@@ -13,16 +13,8 @@ export default {
 	getDetailNews(id) {
 		return api.get(`/api/berita/${id}`);
 	},
-	// getFAQ(id) {
-	// 	return api.get(`/cms/faqs/${id}`, getAccessToken());
-	// },
-	// updateFAQ(id, faq) {
-	// 	return api.put(`/cms/faqs/${id}`, { faq }, getAccessToken());
-	// },
-	// createFAQ(faq) {
-	// 	return api.post('/cms/faqs', { faq }, getAccessToken());
-	// },
-	// deleteFAQ(id) {
-	// 	return api.delete(`/cms/faqs/${id}`, getAccessToken());
-	// },
+
+	getPenyuratan() {
+		return api.get(`/api/surat`);
+	},
 };

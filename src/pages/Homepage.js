@@ -7,6 +7,10 @@ import kk from '../assets/kk.png';
 import { Link } from 'react-router-dom';
 import Cards from '../components/Card';
 import cardImage from '../assets/card-image.png';
+import { useEffect, useState } from 'react';
+
+import NgadiresoAPI from '../utils/Endpoint';
+import { CircularProgress } from '@mui/material';
 
 export const dummyNews = [
 	{
@@ -52,6 +56,20 @@ export const dummyNews = [
 ];
 
 const Homepage = () => {
+	const [news, setNews] = useState([]);
+
+	const getAllDataNews = async () => {
+		const {
+			data: { data },
+		} = await NgadiresoAPI.getAllNews();
+
+		setNews(data);
+	};
+
+	useEffect(() => {
+		getAllDataNews();
+	}, []);
+
 	return (
 		<div>
 			<Jumbotron mode="full" height="min-h-[100vh]" />
@@ -153,18 +171,30 @@ const Homepage = () => {
 					</div>
 					<Link to={'/kabar'}>Lihat semua -</Link>
 				</div>
-				<div className="flex justify-center overflow-x-scroll space-x-3 space-y-7">
-					<div></div>
-					{dummyNews.map((news) => (
-						<Cards
-							title={news.title}
-							description={news.description}
-							image={news.image}
-							date={news.date}
-							key={news.id}
-						/>
-					))}
-				</div>
+
+				<section className="lg:px-10 my-12 flex justify-center items-center ">
+					{news.length === 0 && (
+						<div className="flex justify-center items-center w-full">
+							<CircularProgress />
+						</div>
+					)}
+
+					{news.length > 0 && (
+						<div className="flex justify-center lg:justify-start flex-wrap lg:space-x-3 space-y-7 w-full">
+							<div></div>
+							{news.map((news) => (
+								<Cards
+									title={news.judul}
+									description={news.text}
+									image={news.foto}
+									date={news.updated_at}
+									key={news.id}
+									link={news.id}
+								/>
+							))}
+						</div>
+					)}
+				</section>
 			</div>
 		</div>
 	);

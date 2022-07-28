@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Cards from '../components/Card';
 import Jumbotron from '../components/Jumbotron';
-import { dummyNews } from './Homepage';
 import NgadiresoAPI from '../utils/Endpoint';
 import { CircularProgress } from '@mui/material';
 
@@ -12,7 +11,6 @@ const News = () => {
 		const {
 			data: { data },
 		} = await NgadiresoAPI.getAllNews();
-		console.log(data, 'newss');
 		setNews(data);
 	};
 
@@ -42,10 +40,10 @@ const News = () => {
 						<div></div>
 						{news.map((news) => (
 							<Cards
-								title={news.title}
+								title={news.judul}
 								description={news.text}
 								image={news.foto}
-								date={news.date}
+								date={news.updated_at}
 								key={news.id}
 								link={news.id}
 							/>

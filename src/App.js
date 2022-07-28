@@ -6,6 +6,7 @@ import Homepage from './pages/Homepage';
 import LaporTamu from './pages/Lapor';
 import News from './pages/News';
 import NewsDetail from './pages/NewsDetail';
+import Penyuratan from './pages/Penyuratan';
 import Sejarah from './pages/Sejarah';
 import Wisata from './pages/Wisata';
 function App() {
@@ -20,6 +21,7 @@ function App() {
 				<Route path="/kabar" element={<News />} />
 				<Route path="/lapor-tamu" element={<LaporTamu />} />
 				<Route path="/kabar/:id" element={<NewsDetail />} />
+				<Route path="/penyuratan" element={<Penyuratan />} />
 			</Routes>
 			<Footer />
 		</Router>

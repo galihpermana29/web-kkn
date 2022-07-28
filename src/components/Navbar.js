@@ -5,8 +5,14 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Navbar = () => {
+	const [show, setShow] = useState(false);
+
+	const handleShowMenu = () => {
+		setShow(!show);
+	};
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar
@@ -17,7 +23,7 @@ const Navbar = () => {
 						<Link to={'/'}>Ngadireso</Link>
 					</Typography>
 
-					<div className="lg:hidden">
+					<div className="lg:hidden" onClick={handleShowMenu}>
 						<IconButton
 							size="large"
 							edge="start"
@@ -27,6 +33,7 @@ const Navbar = () => {
 							<MenuIcon />
 						</IconButton>
 					</div>
+
 					<div className="mx-5 hidden lg:block text-white">
 						<Link to={'/hiburan-wisata'}>Hiburan & Wisata</Link>
 					</div>
@@ -44,6 +51,28 @@ const Navbar = () => {
 					</div>
 				</Toolbar>
 			</AppBar>
+
+			<div
+				className={`${
+					show ? 'block' : 'hidden'
+				} bg-white w-[100vw] h-[100vh] flex flex-col justify-start items-start pt-20 space-y-3 border-2 fixed`}
+				onClick={handleShowMenu}>
+				<div className="mx-5 text-black text-2xl border-b-2 border-black">
+					<Link to={'/hiburan-wisata'}>Hiburan & Wisata</Link>
+				</div>
+				<div className="mx-5 text-black text-2xl border-b-2 border-black">
+					<Link to={'/sejarah'}>Sejarah</Link>
+				</div>
+				<div className="mx-5 text-black text-2xl border-b-2 border-black">
+					<Link to={'/kabar'}>Kabar</Link>
+				</div>
+				<div className="mx-5 text-black text-2xl border-b-2 border-black">
+					<Link to={'/penyuratan'}>Penyuratan</Link>
+				</div>
+				<div className="mx-5 bg-lime-800 py-2 px-3 text-white  text-2xl mt-12">
+					<Link to={'/lapor-tamu'}>Lapor Tamu</Link>
+				</div>
+			</div>
 		</Box>
 	);
 };

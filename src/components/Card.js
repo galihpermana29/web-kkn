@@ -1,32 +1,28 @@
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import { trimString } from '../utils/Func';
+import moment from 'moment';
 const Cards = ({ image, title = '', description = '', date, link = 0 }) => {
 	return (
 		<Link to={`/kabar/${link}`}>
-			<Card sx={{ maxWidth: 260, minWidth: 250, minHeight: 250 }}>
-				<CardMedia
-					component="img"
-					alt="green iguana"
-					height="140"
-					image={`https://young-anchorage-84624.herokuapp.com${image}`}
+			<Card sx={{ maxWidth: 260, minWidth: 250, minHeight: 270 }}>
+				<img
+					src={`https://young-anchorage-84624.herokuapp.com${image}`}
+					alt="pic-detail"
+					className="w-full max-h-[150px]"
 				/>
 				<CardContent>
-					<Typography gutterBottom variant="h5" component="div">
-						{trimString(title, 20)}
-					</Typography>
+					<h1 className="font-bold mb-2">{trimString(title, 20)}</h1>
 					<Typography variant="body2" color="text.secondary">
-						{trimString(description, 60)}
+						{trimString(description, 50)}
 					</Typography>
 				</CardContent>
 				<CardActions>
-					<Button size="small">{date}</Button>
-					<Button size="small">Learn More</Button>
+					<Button size="small">{moment(date).format('MM/DD/YYYY')}</Button>
 				</CardActions>
 			</Card>
 		</Link>

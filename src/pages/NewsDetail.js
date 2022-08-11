@@ -1,10 +1,13 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Cards from '../components/Card';
-import { dummyNews } from './Homepage';
-import NgadiresoAPI from '../utils/Endpoint';
-import { useEffect, useState } from 'react';
-import moment from 'moment';
 import { CircularProgress } from '@mui/material';
+import { dummyNews } from './Homepage';
+
+import defaultImage from '../assets/defaultImg.png';
+
+import NgadiresoAPI from '../utils/Endpoint';
+import moment from 'moment';
 const NewsDetail = () => {
 	const [news, setNews] = useState([]);
 
@@ -35,11 +38,7 @@ const NewsDetail = () => {
 					<p>{moment(updated_at).format('MM/DD/YYYY')}</p>
 				</div>
 
-				<img
-					src={`https://young-anchorage-84624.herokuapp.com${foto}`}
-					alt="pic-detail"
-					className="w-full"
-				/>
+				<img src={defaultImage} alt="pic-detail" className="w-full" />
 
 				<p className="mt-10">{text}</p>
 				{news.length === 0 && (

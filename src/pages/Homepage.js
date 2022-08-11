@@ -1,5 +1,5 @@
 import Jumbotron from '../components/Jumbotron';
-import tentangDesa from '../assets/tentang-desa.png';
+import fotoTentangDesa from '../assets/tentang-desa.png';
 import kades from '../assets/kades.png';
 import jiwaLaki from '../assets/jiwa-pria.png';
 import jiwaWanita from '../assets/jiwa-wanita.png';
@@ -55,14 +55,23 @@ export const dummyNews = [
 	},
 ];
 
-const Homepage = () => {
+const Homepage = ({ moduleData }) => {
+	const {
+		imgKades,
+		imgTentangDesa,
+		jumbotron,
+		jmlPenduduk,
+		jmlPria,
+		jmlWanita,
+		namaKades,
+		sambutanKades,
+		tentangDesa,
+	} = moduleData;
 	const [news, setNews] = useState([]);
-
 	const getAllDataNews = async () => {
 		const {
 			data: { data },
 		} = await NgadiresoAPI.getAllNews();
-
 		setNews(data);
 	};
 
@@ -77,17 +86,17 @@ const Homepage = () => {
 			<section className="flex flex-col-reverse lg:flex-row lg:justify-between items-center py-10 bg-[#0B130F]">
 				<div className="text-white px-12 lg:min-w-[500px] max-w-[700px]">
 					<h1 className="text-3xl font-bold mb-4">Tentang Desa</h1>
-					<p className='text-justify'>
+					<p className="text-justify">
 						Ngadireso adalah sebuah desa di wilayah Kecamatan Poncokusumo,
 						Kabupaten Malang, Provinsi Jawa Timur. Kecamatan Poncokusumo
 						termasuk ke dalam kawasan agropolitan, yakni daerah pertanian
-						berbasis wisata. <br /> <br /> Desa Ngadireso merupakan sebuah desa
-						yang sejuk udaranya dengan kondisi alam perbukitan dan lembah nan
-						elok di pandang mata, sumber mata air yang tiada putus-putusnya.
+						berbasis wisata. Desa Ngadireso merupakan sebuah desa yang sejuk
+						udaranya dengan kondisi alam perbukitan dan lembah nan elok di
+						pandang mata, sumber mata air yang tiada putus-putusnya.
 					</p>
 				</div>
 				<img
-					src={tentangDesa}
+					src={fotoTentangDesa}
 					alt="tentang desa"
 					className="mb-10 px-12 lg:mb-0 lg:px-0 w-full max-w-[500px] md:max-w-[600px]"
 				/>
@@ -96,17 +105,15 @@ const Homepage = () => {
 			<section className="flex flex-col-reverse lg:flex-row-reverse lg:justify-center items-center lg:py-20 py-10 bg-[#F5F5F5]">
 				<div className="px-12 lg:min-w-[500px] max-w-[700px] w-full">
 					<h1 className="text-3xl font-bold mb-4">"</h1>
-					<p className='text-justify'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-						velit nemo non, maiores, at laborum quia ea voluptatem earum cumque
-						distinctio! Saepe, quae quidem. Nulla accusantium quae beatae
-						impedit harum! Lorem ipsum dolor sit amet consectetur adipisicing
-						elit. Aperiam, in. Lorem ipsum dolor sit amet, consectetur
-						adipisicing elit. Ratione consectetur nisi ex voluptate veniam
-						ipsum.
+					<p className="text-justify">
+						Terima kasih kepada semua pihak yang telah memberikan dukungan dan
+						kontribusi dalam merealisasikan Website Desa Ngadireso. Semoga
+						dengan adanya Website Desa Ngadireso dapat memberikan manfaat dan
+						menjadi salah satu upaya dalam peningkatan pelayanan Pemerintahan
+						Desa.{' '}
 					</p>
 					<div className="mt-10">
-						<h1 className="text-3xl text-[#3B653E]">Nur Salim</h1>
+						<h1 className="text-3xl text-[#3B653E]">{namaKades}</h1>
 						<p>Kepala Desa</p>
 					</div>
 				</div>
@@ -126,21 +133,21 @@ const Homepage = () => {
 					<div className="flex items-center flex-col lg:flex-row">
 						<img src={jiwaLaki} alt="laki" className="max-w-[80px]" />
 						<div className="text-white text-center mt-2 ml-5 lg:text-left">
-							<p className="font-bold text-3xl">213</p>
+							<p className="font-bold text-3xl">{jmlPria}</p>
 							<p>Jiwa Penduduk Pria</p>
 						</div>
 					</div>
 					<div className="flex items-center flex-col lg:flex-row">
 						<img src={kk} alt="laki" className="max-w-[80px]" />
 						<div className="text-white text-center mt-2 ml-5  lg:text-left">
-							<p className="font-bold text-3xl">213</p>
+							<p className="font-bold text-3xl">{jmlPenduduk}</p>
 							<p>Kartu Keluarga</p>
 						</div>
 					</div>
 					<div className="flex items-center flex-col lg:flex-row">
 						<img src={jiwaWanita} alt="laki" className="max-w-[80px]" />
 						<div className="text-white text-center mt-2 ml-5  lg:text-left">
-							<p className="font-bold text-3xl">213</p>
+							<p className="font-bold text-3xl">{jmlWanita}</p>
 							<p>Jiwa Penduduk Wanita</p>
 						</div>
 					</div>

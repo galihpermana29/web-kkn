@@ -17,4 +17,8 @@ export default {
 	getPenyuratan() {
 		return api.get(`/api/surat`);
 	},
+
+	getStylingEditor() {
+		return api.get('/api/editable/all');
+	},
 };

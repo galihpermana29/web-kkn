@@ -7,6 +7,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
+import logo from '../assets/logo.png';
+
 const Navbar = () => {
 	const [show, setShow] = useState(false);
 
@@ -19,8 +21,21 @@ const Navbar = () => {
 				position="fixed"
 				sx={{ backgroundColor: '#0B130F', opacity: '0.48' }}>
 				<Toolbar>
-					<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-						<Link to={'/'}>Ngadireso</Link>
+					<Typography
+						variant="h6"
+						component="div"
+						sx={{
+							flexGrow: 1,
+							display: 'flex',
+							alignItems: 'center',
+						}}>
+						<img
+							src={logo}
+							alt="logo"
+							style={{ marginRight: '10px' }}
+							width={'30px'}
+						/>
+						<Link to={'/'}>Desa Ngadireso</Link>
 					</Typography>
 
 					<div className="lg:hidden" onClick={handleShowMenu}>

@@ -1,17 +1,23 @@
+import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+
+import defaultImage from '../assets/defaultImg.png';
+
 import { trimString } from '../utils/Func';
+
 import moment from 'moment';
+
 const Cards = ({ image, title = '', description = '', date, link = 0 }) => {
+
 	return (
 		<Link to={`/kabar/${link}`}>
 			<Card sx={{ maxWidth: 260, minWidth: 250, minHeight: 270 }}>
 				<img
-					src={`https://young-anchorage-84624.herokuapp.com${image}`}
+					src={defaultImage}
 					alt="pic-detail"
 					className="w-full max-h-[150px]"
 				/>

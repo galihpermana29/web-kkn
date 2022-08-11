@@ -1,6 +1,13 @@
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Jumbotron from '../components/Jumbotron';
 
-const Wisata = () => {
+const Wisata = ({ moduleData }) => {
+	const navigate = useNavigate();
+	useEffect(() => {
+		navigate('/hiburan-wisata/tirta-umbulan');
+	}, []);
+
 	return (
 		<div>
 			<Jumbotron

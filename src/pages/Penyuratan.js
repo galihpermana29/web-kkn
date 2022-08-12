@@ -29,14 +29,14 @@ const Penyuratan = () => {
 					<CircularProgress />
 				</div>
 			)}
-			<section className="min-h-[50vh] flex px-12 my-[150px] ">
-				<div className="flex flex-wrap space-x-5 space-y-5 w-full justify-center">
+			<section className="min-h-[50vh] flex px-5 lg:px-12 my-[150px] ">
+				<div className="flex flex-wrap space-x-5 space-y-5 w-full justify-center ">
 					<div></div>
 					{surat.length > 0 &&
 						surat.map((surat, idx) => (
 							<div
 								key={surat.id}
-								className="w-full min-w-[200px] max-w-[400px] flex items-center lg:h-[80px] lg:min-h-[60px] shadow-lg">
+								className="w-full min-w-[200px] max-w-[400px] flex items-center lg:min-h-[60px] shadow-lg">
 								<div className="text-white px-8 flex justify-center items-center mr-3 bg-lime-800 h-full">
 									{idx + 1}
 								</div>

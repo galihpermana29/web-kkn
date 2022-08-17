@@ -1,0 +1,18 @@
+.jumbotronGradient::before{
+    content : '';
+    position : absolute;
+    inset : 0;
+    background-image : linear-gradient(rgba(11, 19, 15,0) 40%,rgba(11, 19, 15,1));
+}
+.jumbotronBlack::before{
+    content : '';
+    position : absolute;
+    inset : 0;
+    background-color: rgba(11, 19, 15,0.5);
+}
+.imgkades::before{
+    content : '';
+    position : absolute;
+    inset : 0;
+    background-image : linear-gradient(rgba(245,245,245,0) 20%,rgba(245,245,245,1) 90%);
+}

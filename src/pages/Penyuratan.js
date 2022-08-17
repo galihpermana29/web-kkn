@@ -2,11 +2,17 @@ import { CircularProgress } from '@mui/material';
 import { useEffect, useState } from 'react';
 import Jumbotron from '../components/Jumbotron';
 import NgadiresoAPI from '../utils/Endpoint';
-const Penyuratan = () => {
+const Penyuratan = ({moduleData}) => {
 	const [surat, setSurat] = useState([]);
+
+	const{
+		textSurat : text,
+		jmbtSurat : jmbt
+	} = moduleData;
+
 	const fetchSurat = async () => {
 		const {
-			data: { data = {} },
+			data: data,
 		} = await NgadiresoAPI.getPenyuratan();
 		setSurat(data);
 	};
@@ -19,9 +25,10 @@ const Penyuratan = () => {
 			<Jumbotron
 				mode="half"
 				height="min-h-[60vh]"
-				paragraph="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. "
+				paragraph={text}
+				type="secondary"
 				title="Penyuratan"
-				background="bg-penyuratan-image"
+				background={jmbt}
 			/>
 
 			{surat.length === 0 && (
@@ -36,14 +43,14 @@ const Penyuratan = () => {
 						surat.map((surat, idx) => (
 							<div
 								key={surat.id}
-								className="w-full min-w-[200px] max-w-[400px] flex items-center lg:min-h-[60px] shadow-lg">
-								<div className="text-white px-8 flex justify-center items-center mr-3 bg-lime-800 h-full">
+								className="w-full min-w-[200px] max-w-[400px] flex items-center h-fit shadow-lg">
+								<div className="text-white px-8 flex justify-center items-center mr-3 bg-blackcus min-h-[96px]">
 									{idx + 1}
 								</div>
 								<div className="w-full mr-3">
 									<h1 className="font-semibold mb-3">{surat.nama}</h1>
 									<a href={surat.link} target="_blank">
-										<div className="bg-lime-800 text-white py-2 px-3 w-full text-center">
+										<div className="bg-greencus text-white py-2 px-3 w-full text-center">
 											Download
 										</div>
 									</a>

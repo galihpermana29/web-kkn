@@ -3,29 +3,37 @@ import Cards from '../components/Card';
 import Jumbotron from '../components/Jumbotron';
 import NgadiresoAPI from '../utils/Endpoint';
 import { CircularProgress } from '@mui/material';
+import { sortNewsId } from '../utils/Func';
 
-const News = () => {
+const News = ({moduleData}) => {
+	const {
+		textKabar : text,
+		jmbtKabar : jmbt
+	} = moduleData;
+
 	const [news, setNews] = useState([]);
-
+	const [bg,setBg] = useState({});
 	const getAllDataNews = async () => {
-		const {
-			data: { data },
-		} = await NgadiresoAPI.getAllNews();
-		setNews(data);
+		const {data: data } = await NgadiresoAPI.getAllNews();
+		setNews(sortNewsId(data));
 	};
 
 	useEffect(() => {
 		getAllDataNews();
+		setBg({
+			text : text,
+			jmbt : jmbt
+		})
 	}, []);
-
 	return (
 		<div>
 			<Jumbotron
 				mode="half"
 				height="min-h-[60vh]"
-				paragraph="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. "
+				paragraph={bg.text}
+				type="secondary"
 				title="Kabar Berita"
-				background="bg-news-image"
+				background={bg.jmbt}
 			/>
 
 			<section className="px-10 my-12 min-h-[70vh] flex justify-center items-center">

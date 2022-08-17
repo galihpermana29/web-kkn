@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const createAPI = (
-	baseURL = `https://young-anchorage-84624.herokuapp.com/`,
+	baseURL = `https://admin.ngadireso.com/`,
 	config = {}
 ) => {
 	const axiosInstance = axios.create({
